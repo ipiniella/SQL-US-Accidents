@@ -33,7 +33,7 @@ This project analyzes US car accidents between 2016-2023 with SQL queries. It pr
 -Data Visualization
 
 ## SQL Queries
--Top 10 States with Most Accidents:
+**Top 10 States with Most Accidents**:
 
 duckdb.sql(f"""
 SELECT State, COUNT(*) AS total_accidents
@@ -43,7 +43,7 @@ ORDER BY total_accidents DESC
 LIMIT 10
 """).df()
 
--Top 10 Cities with Most Accidents:
+**Top 10 Cities with Most Accidents**:
 
 duckdb.sql(f"""
 SELECT City, State, COUNT(*) AS total_accidents
@@ -53,7 +53,7 @@ ORDER BY total_accidents DESC
 LIMIT 10
 """).df()
 
--Accidents by Weather Condition:
+**Accidents by Weather Condition**:
 
 con.sql("""
 SELECT Weather_Condition, COUNT(*) AS total_accidents
@@ -64,7 +64,7 @@ ORDER BY total_accidents DESC
 LIMIT 10
 """).df()
 
--Accidents by Time Hour:
+**Accidents by Time Hour**:
 
 con.sql("""
 SELECT EXTRACT(HOUR FROM Start_Time) AS accident_hour,
